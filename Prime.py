@@ -1,7 +1,7 @@
 import math
 from time import *
 knownPrimes = []
-def isPrime(num: int)->bool:
+def isPrime(num):
     for x in knownPrimes:
         if x>math.sqrt(num):
             break
@@ -10,7 +10,7 @@ def isPrime(num: int)->bool:
     knownPrimes.append(num)
     return True
 
-def search(numPrimes: int = 100, interval = 1):
+def search(numPrimes = 100, interval = 1):
     startTime = time()
     counter = 2
     numFound = 0
@@ -25,4 +25,4 @@ def search(numPrimes: int = 100, interval = 1):
     print(f"Took {time()-startTime} seconds for an average of {(time()-startTime)*10000000/numPrimes} microseconds per prime ")
     return knownPrimes
 
-search(1000000, interval = 100000)
+search(1000000)
